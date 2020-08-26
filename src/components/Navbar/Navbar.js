@@ -12,7 +12,7 @@ class Navbar extends React.Component {
     render() {
         return(
             <StyledNavbar>
-                Navbar Page
+                Risk of Rain 2 DB
             </StyledNavbar>
         )
     }

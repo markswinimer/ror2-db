@@ -2,7 +2,7 @@ import React from 'react';
 
 import Item from '../Item/Item';
 
-import { StyledWindow, Section } from './Window.styled.js';
+import { StyledWindow, Section, CategoryDivider } from './Window.styled.js';
 import itemsSeed from '../../database/items.seed';
 
 class Window extends React.Component {
@@ -23,16 +23,37 @@ class Window extends React.Component {
             console.log(this.state.items)
 
             commonItems = this.state.items.items.map(item => {
-                return <Item name={item.name} />
+                return <Item item={item} id={item.name} name={item.name} handleHover={this.props.handleHover}/>
             })
         }
         return(
             <StyledWindow>
+                <CategoryDivider>
+                    Common
+                </CategoryDivider>
                 <Section>
-                    <h1>Common</h1>
                     {commonItems}
                 </Section>
-                Window Page
+                <CategoryDivider>
+                    Uncommon
+                </CategoryDivider>
+                <Section>
+                    {commonItems}
+                </Section>
+
+                <CategoryDivider>
+                    Legendary
+                </CategoryDivider>
+                <Section>
+                    {commonItems}
+                </Section>
+
+                <CategoryDivider>
+                    Boss
+                </CategoryDivider>
+                <Section>
+                    {commonItems}
+                </Section>
             </StyledWindow>
         )
     }

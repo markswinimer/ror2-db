@@ -6,13 +6,16 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            currentItem: null
         }
     }
     render() {
+        console.log(this.props)
+        // const { itemName, itemDescription } = this.props.currentItemInfo;
         return(
             <StyledSidebar>
-                Sidebar Page
+                {/* name: {itemName} */}
+                {/* description: {itemDescription} */}
             </StyledSidebar>
         )
     }
