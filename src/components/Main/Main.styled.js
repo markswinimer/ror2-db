@@ -6,7 +6,7 @@ export const StyledMain = styled.div`
     color: #04162D;
     background-color: #073C6B;
     font-family: 'Coda', cursive;
-
+    height: 100vh;
 
 `
 

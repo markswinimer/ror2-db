@@ -5,7 +5,12 @@ import { StyledItem, ItemIcon } from './Item.styled.js';
 const Item = props => {
     return(
         <StyledItem>
-            <ItemIcon onMouseEnter={props.handleHover} id={props.item} item={props.item} src="/backup_magazine.png" />
+            <ItemIcon 
+                onMouseEnter={props.handleHover} 
+                category={props.category} 
+                id={props.id} 
+                item={props.item} 
+                src={"/images/items/" + props.icon} />
         </StyledItem>
     )
 }

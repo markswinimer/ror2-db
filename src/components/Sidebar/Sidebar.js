@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyledSidebar } from './Sidebar.styled.js';
+import { StyledSidebar, Detail } from './Sidebar.styled.js';
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -10,12 +10,23 @@ class Sidebar extends React.Component {
         }
     }
     render() {
-        console.log(this.props)
-        // const { itemName, itemDescription } = this.props.currentItemInfo;
+        let name = null;
+        let description = null;
+        let text = null;
+        let type = null;
+        if(this.props.currentItemInfo) {
+            name = this.props.currentItemInfo.name;
+            description = this.props.currentItemInfo.description;
+            text = this.props.currentItemInfo.text;
+            type = this.props.currentItemInfo.type;
+        }
+
         return(
             <StyledSidebar>
-                {/* name: {itemName} */}
-                {/* description: {itemDescription} */}
+                <h2>{name}</h2>
+                <h4>{type}</h4>
+                <p>{text}</p>
+                <div dangerouslySetInnerHTML={{ __html: description }}></div>
             </StyledSidebar>
         )
     }
